@@ -19,7 +19,7 @@ public class CalculatorServiceTest {
 		BigDecimal number1 = new BigDecimal("0.3");
 		BigDecimal number2 = new BigDecimal("0.4");
 		
-		BigDecimal result = calculatorService.add(number1, number2);
+		BigDecimal result = calculatorService.calculate("add", number1, number2);
 		
 		Assertions.assertEquals(new BigDecimal("0.7"), result);
 	}
@@ -29,7 +29,7 @@ public class CalculatorServiceTest {
 		BigDecimal number1 = new BigDecimal("0.3");
 		BigDecimal number2 = new BigDecimal("0.4");
 		
-		BigDecimal result = calculatorService.subtract(number1, number2);
+		BigDecimal result = calculatorService.calculate("subtract", number1, number2);
 		
 		Assertions.assertEquals(new BigDecimal("-0.1"), result);
 	}
