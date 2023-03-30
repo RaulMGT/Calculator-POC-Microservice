@@ -20,4 +20,10 @@ public class CalculatorService {
 		return sub.calculate(numbers);
 	}
 
+	public BigDecimal calculate(String operator, BigDecimal... numbers) {
+		if(operator.equalsIgnoreCase("add")) {
+			return add(numbers);
+		}
+		return subtract(numbers);
+	}
 }
