@@ -1,8 +1,11 @@
 package com.poc.calculator.service;
 
-import java.math.BigDecimal;
+import java.util.List;
+
+import com.poc.calculator.model.Operand;
+import com.poc.calculator.model.Result;
 
 @FunctionalInterface
 public interface ArithmeticOperation {
-	BigDecimal calculate(BigDecimal... numbers);
+	Result calculate(List<Operand> operands);
 }
