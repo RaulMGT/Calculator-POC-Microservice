@@ -14,12 +14,12 @@ Execution
     -   http://localhost:8080/api/v1/calculator/add?operands=2,3
     -   http://localhost:8080/api/v1/calculator/subtract?operands=2,3
 
-Documentación API
+API Documentation
 =================
-[API Documentation](https://github.com/RaulMGT/Calculator-Microservice/calculator-swagger.json)
+See file calculator-swagger.json
 
 You can also visualize the API documentation in pretty format following the next steps:
 1. Access URL https://editor.swagger.io/ 
-2. File -> Import URL -> https://github.com/RaulMGT/Calculator-Microservice/calculator-swagger.json
+2. Load file. File -> Import File -> Select calculator-swagger.json . Or paste calculator-swagger.json contents on the left side of the page.
 
 Warning: Executing requests from swagger will not work. Requests will be blocked by CORS policy.
