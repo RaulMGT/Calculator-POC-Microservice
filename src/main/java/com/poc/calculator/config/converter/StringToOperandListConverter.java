@@ -13,7 +13,7 @@ import com.poc.calculator.exception.InvalidOperandException;
 import com.poc.calculator.model.Operand;
 
 @Component
-public class StringToOperandsConverter implements Converter<String, List<Operand>> {
+public class StringToOperandListConverter implements Converter<String, List<Operand>> {
 
 	@Override
 	public List<Operand> convert(String source) {
