@@ -2,6 +2,11 @@ package com.poc.calculator.model;
 
 import java.math.BigDecimal;
 
+/**
+ * Represents a Result object, resultant of performing an arithmetic operation
+ * to some operands using an operator
+ *
+ */
 public class Result {
 
 	private BigDecimal result;

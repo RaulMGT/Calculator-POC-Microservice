@@ -8,6 +8,11 @@ import com.poc.calculator.config.converter.StringToOperatorEnumConverter;
 
 public class WebConfig implements WebMvcConfigurer {
 	
+	/**
+	 * Registers custom formatters. Tells our controller how to transform from one object to another
+	 * 
+	 * @param registry where our converters will be registered
+	 */
 	@Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(new StringToOperatorEnumConverter());

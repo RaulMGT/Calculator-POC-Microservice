@@ -9,6 +9,12 @@ import com.poc.calculator.service.ArithmeticOperation;
 
 public class Add implements ArithmeticOperation {
 
+	/**
+	 * Performs the Add operation to operands
+	 * 
+	 * @param operands
+	 * @return result
+	 */
 	@Override
 	public Result calculate(List<Operand> operands) {
 		BigDecimal total = BigDecimal.ZERO;

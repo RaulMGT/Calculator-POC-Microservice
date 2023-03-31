@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * Represents an Operand
+ */
 public class Operand {
 
 	@NotNull

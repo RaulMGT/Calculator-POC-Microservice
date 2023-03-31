@@ -19,6 +19,11 @@ public class ExceptionHandlerControllerAdvice {
 	
 	private final Logger logger = LoggerFactory.getLogger(ExceptionHandlerControllerAdvice.class);
 	
+	/**
+	 * 
+	 * @param ex Caught exception type
+	 * @return response entity containing 4xx http status and error message
+	 */
 	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
 	protected ResponseEntity<String> handleInvalidOperatorException(MethodArgumentTypeMismatchException ex) {
 		Throwable throwable = ex;
@@ -34,7 +39,11 @@ public class ExceptionHandlerControllerAdvice {
         return response;
     }
 	
-	
+	/**
+	 * 
+	 * @param ex Caught exception type
+	 * @return response entity containing http status and error message
+	 */
 	@ExceptionHandler(MethodArgumentConversionNotSupportedException.class)
 	protected ResponseEntity<String> handleInvalidOperandException(MethodArgumentConversionNotSupportedException ex) {
 		Throwable throwable = ex;
@@ -46,13 +55,18 @@ public class ExceptionHandlerControllerAdvice {
 			throwable = customException;
 			response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(customException.getMessage());
 		} catch (Exception e) {
-			response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+			response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
 		}
 		logException(response, throwable);
 
         return response;
     }
 	
+	/**
+	 * 
+	 * @param ex Caught exception type
+	 * @return response entity containing 4xx http status and error message
+	 */
 	@ExceptionHandler(ConstraintViolationException.class)
 	protected ResponseEntity<String> handleConstraintViolationException(ConstraintViolationException ex) {
 		ResponseEntity<String> response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
@@ -60,6 +74,11 @@ public class ExceptionHandlerControllerAdvice {
         return response;
     }
 	
+	/**
+	 * 
+	 * @param ex Caught exception type
+	 * @return response entity containing 5xx http status and error message
+	 */
 	@ExceptionHandler(Exception.class)
 	protected ResponseEntity<String> handleGenericException(Exception ex) {
 		ResponseEntity<String> response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
@@ -67,6 +86,11 @@ public class ExceptionHandlerControllerAdvice {
         return response;
     }
 	
+	/**
+	 * 
+	 * @param response 
+	 * @param throwable
+	 */
 	private void logException(ResponseEntity<String> response, Throwable throwable) {
 		if(response != null && throwable != null) {
 			logger.error(Utils.convertToJson(response), throwable);

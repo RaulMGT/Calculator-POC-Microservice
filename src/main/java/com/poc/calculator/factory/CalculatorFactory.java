@@ -8,6 +8,12 @@ import com.poc.calculator.service.impl.Subtract;
 
 public class CalculatorFactory {
 
+	/**
+	 * Associates an operator with the ArithmeticOperation to execute
+	 * 
+	 * @param operator
+	 * @return ArithmeticOperation to perform
+	 */
 	public static ArithmeticOperation getInstance(Operator operator) {
 		switch(operator) {
 			case ADD:

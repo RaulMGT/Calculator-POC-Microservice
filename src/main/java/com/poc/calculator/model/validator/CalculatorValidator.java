@@ -12,6 +12,12 @@ import com.poc.calculator.model.Calculator;
 
 public class CalculatorValidator {
 	
+	/**
+	 * Validates the calculator and arises violations
+	 * @param calculator object to validate
+	 * @return true if calculator is valid
+	 * @throws ConstraintViolationException if calculator is not valid
+	 */
 	public static boolean validate(Calculator calculator) {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();

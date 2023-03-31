@@ -15,6 +15,9 @@ import com.poc.calculator.model.Operator;
 import com.poc.calculator.model.Result;
 import com.poc.calculator.service.CalculatorService;
 
+/**
+ * Manages requests with path /api/v1/calculator/
+ */
 @RestController
 @RequestMapping("/api/v1/calculator/")
 public class CalculatorController {
@@ -22,6 +25,14 @@ public class CalculatorController {
 	@Autowired
 	private CalculatorService calculatorService;
 	
+	/**
+	 * Processes the incoming request performing an arithmetic operation using
+	 * operands and the operator to apply
+	 * 
+	 * @param operator
+	 * @param operands 
+	 * @return response entity containing http status and result value
+	 */
 	@GetMapping("/{operator}")
 	public ResponseEntity<Result> calculate(@PathVariable(value= "operator") Operator operator, @RequestParam(value= "operands") List<Operand> operands){
 		return ResponseEntity.ok(calculatorService.calculate(operator, operands));

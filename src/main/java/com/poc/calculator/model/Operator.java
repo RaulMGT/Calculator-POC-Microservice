@@ -6,6 +6,10 @@ public enum Operator {
 	ADD,
 	SUBTRACT;
 
+	/**
+	 * 
+	 * @return all possible operators
+	 */
 	public static String[] getAllOperators() {
 		return Arrays.stream(Operator.values())
 				.map(operator -> operator.toString().toLowerCase())

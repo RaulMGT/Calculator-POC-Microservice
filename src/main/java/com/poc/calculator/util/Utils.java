@@ -10,6 +10,11 @@ public class Utils {
 	
 	private final static Logger logger = LoggerFactory.getLogger(Utils.class);
 	
+	/**
+	 * 
+	 * @param object
+	 * @return string value in Json format
+	 */
 	public static String convertToJson(Object object) {
 		ObjectMapper objectMapper = new ObjectMapper();
 	    String objectJson = "";

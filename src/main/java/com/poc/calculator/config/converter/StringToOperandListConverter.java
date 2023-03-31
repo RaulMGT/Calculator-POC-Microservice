@@ -15,6 +15,14 @@ import com.poc.calculator.model.Operand;
 @Component
 public class StringToOperandListConverter implements Converter<String, List<Operand>> {
 
+	/**
+	 * Expects a String of comma separated numbers in order to transform from
+	 * String to List<Operand>
+	 * 
+	 * @param source input parameter
+	 * @return list of operands
+	 * @throws InvalidOperandException in case some value in source is not a valid number
+	 */
 	@Override
 	public List<Operand> convert(String source) {
 		

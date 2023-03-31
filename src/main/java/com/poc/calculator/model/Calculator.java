@@ -7,6 +7,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ * Represents a valid calculator containing a operator and its operands
+ */
 public class Calculator {
 
 	@NotNull

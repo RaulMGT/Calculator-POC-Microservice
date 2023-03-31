@@ -9,6 +9,12 @@ import com.poc.calculator.service.ArithmeticOperation;
 
 public class Subtract implements ArithmeticOperation {
 
+	/**
+	 * Performs the Subtract operation to operands
+	 * 
+	 * @param operands
+	 * @return result
+	 */
 	@Override
 	public Result calculate(List<Operand> operands) {
 		BigDecimal total = operands.get(0).getValue();
