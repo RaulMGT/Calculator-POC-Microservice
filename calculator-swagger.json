@@ -1,0 +1,122 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Calculator API",
+      "description": "API for performing arithmetic operations using a calculator"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api/v1/calculator/",
+    "tags": [
+      {
+        "name": "Calculator",
+        "description": "Endpoints for performing arithmetic operations"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/add": {
+        "get": {
+          "tags": [
+            "Calculator"
+          ],
+          "summary": "Perform addition operation",
+          "description": "Returns the result of adding two numbers",
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "operands",
+              "in": "query",
+              "description": "The numbers to add, separated by a comma",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "$ref": "#/definitions/Result"
+              },
+              "examples": {
+                "application/json": {
+                  "value": {
+                    "result": 3
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid input data"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/subtract": {
+        "get": {
+          "tags": [
+            "Calculator"
+          ],
+          "summary": "Perform subtraction operation",
+          "description": "Returns the result of subtracting two numbers",
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "numbers",
+              "in": "query",
+              "description": "Numbers to be subtracted",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "$ref": "#/definitions/Result"
+              },
+              "examples": {
+                "application/json": {
+                  "value": {
+                    "result": -0.5
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid input data"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Result": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      }
+    }
+  }
